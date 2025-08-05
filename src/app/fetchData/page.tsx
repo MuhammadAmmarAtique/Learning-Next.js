@@ -1,4 +1,4 @@
-import React from 'react'
+// Fetching Dummy Data
 
 const page =  async () => {
  const response =  await fetch('https://dummyjson.com/test')
