@@ -1,16 +1,22 @@
-
-interface pageProps{
-  params:{
-    recipeId: string
-  }
+interface pageProps {
+  params: {
+    recipeId: string;
+  };
 }
 
-const page =  async ({params}:pageProps) => {
-  const recipe =  params.recipeId;
-  
-  return (
-    <div>{recipe}</div>
-  )
-}
+export const generateMetadata = async ({ params }: pageProps) => {
+  const recipe = await params.recipeId;
 
-export default page
+  return {
+    title: `${recipe} title`,
+    description: `${recipe} description goes here bro`,
+  };
+};
+
+const page = async ({ params }: pageProps) => {
+  const recipe = params.recipeId;
+
+  return <div>{recipe}</div>;
+};
+
+export default page;
